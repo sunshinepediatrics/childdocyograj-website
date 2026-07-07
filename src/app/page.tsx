@@ -14,7 +14,6 @@ const fallbackHeroImage = "https://images.unsplash.com/photo-1581056771107-24ca5
 const heroImage = existsSync(join(process.cwd(), "public", "images", "dr-yograj-sharma.jpg")) ? doctorPhotoPath : fallbackHeroImage;
 const consultationImage = "/images/consultation-child-family.jpg";
 const logoSrc = "/Blue_White_Simple_Modern_Handwritten_Typographic_Minimalist_Capri_Sport_Club__Logo-removebg-preview (1).png";
-const doctorSketch = "/images/dr-yograj-sketch.svg";
 
 export default function Home() {
   const physicianJsonLd = {
@@ -71,9 +70,6 @@ export default function Home() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/80 bg-white shadow-2xl">
               <Image src={heroImage} alt="Dr. Yograj Sharma pediatric consultation photo" fill priority className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
               <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-900/55 to-transparent" />
-            </div>
-            <div className="absolute -left-6 top-8 hidden w-40 rotate-[-4deg] overflow-hidden rounded-[24px] border border-teal-100 bg-white shadow-xl sm:block lg:-left-10 lg:w-48">
-              <Image src={doctorSketch} alt="Sketch portrait of Dr. Yograj Sharma" width={720} height={820} className="h-auto w-full" />
             </div>
             <div className="absolute -bottom-5 left-5 right-5 rounded-[24px] bg-white/92 p-5 shadow-xl backdrop-blur">
               <p className="font-heading text-xl font-semibold text-slate-800">{brand.doctor}</p>

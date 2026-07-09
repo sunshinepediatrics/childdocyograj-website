@@ -328,73 +328,115 @@ export const blogPosts = [
 export const faqs = [
   {
     question: "When should I take my child to the emergency department instead of waiting for a clinic visit?",
+    questionNe: "क्लिनिक पर्खिनुभन्दा बच्चालाई emergency मा कहिले लैजाने?",
     answer:
       "Seek immediate medical attention if your child:\nHas difficulty breathing or is breathing very fast.\nIs difficult to wake up or unusually sleepy.\nHas a seizure.\nHas blue lips or tongue.\nHas severe dehydration: very little urine, no tears, very dry mouth.\nHas persistent vomiting with inability to keep fluids down.\nHas a fever in a baby younger than 3 months.\nHas severe injury or uncontrolled bleeding.\n\nIf you are unsure, it is always safer to seek medical advice promptly.",
+    answerNe:
+      "बच्चामा यी लक्षण छन् भने तुरुन्त medical help लिनुहोस्:\nसास फेर्न गाह्रो हुनु वा धेरै छिटो सास फेर्नु।\nउठाउन गाह्रो हुनु वा असामान्य रूपमा धेरै निदाउनु।\nझट्का आउनु।\nओठ वा जिब्रो नीलो हुनु।\nगम्भीर dehydration: पिसाब धेरै कम, आँसु नआउनु, मुख धेरै सुख्खा हुनु।\nलगातार बान्ता भएर पानी पनि नरहनु।\n३ महिनाभन्दा कम उमेरको बच्चामा fever हुनु।\nगम्भीर चोट वा रक्तस्राव नरोक्नु।\n\nशंका भएमा ढिला नगरी medical advice लिनु सुरक्षित हुन्छ।",
   },
   {
     question: "Does every fever need antibiotics?",
+    questionNe: "के हरेक fever मा antibiotics चाहिन्छ?",
     answer:
       "No.\n\nMost fevers in children are caused by viral infections, which do not improve with antibiotics. Antibiotics are only prescribed when a bacterial infection is suspected or confirmed.\n\nThe temperature itself is less important than how your child looks and behaves.",
+    answerNe:
+      "चाहिँदैन।\n\nबालबालिकामा धेरै fever viral infection का कारण हुन्छन्, जसमा antibiotics ले फाइदा गर्दैन। Bacterial infection शंका वा पुष्टि भएमा मात्र antibiotics दिइन्छ।\n\nTemperature भन्दा बच्चाको अवस्था, activity, खानपान र सासको अवस्था बढी महत्वपूर्ण हुन्छ।",
   },
   {
     question: "How high is too high for a fever?",
+    questionNe: "Fever कति पुगेपछि धेरै मानिन्छ?",
     answer:
-      "The number on the thermometer is only one part of the picture.\n\nA child with 39.5 C who is playful and drinking fluids may be less concerning than a child with 38 C who is lethargic and struggling to breathe.\n\nFocus on your child's overall condition rather than the temperature alone.",
+      "The number on the thermometer is only one part of the picture.\n\nA child with 39 degree Celsius (103 degree Fahrenheit) who is playful and drinking fluids may be less concerning than a child with 38 C (100.4 F) who is lethargic and struggling to breathe.\n\nFocus on your child's overall condition rather than the temperature alone.",
+    answerNe:
+      "Thermometer मा देखिएको अंक मात्र सबै कुरा होइन।\n\n39 degree Celsius (103 degree Fahrenheit) fever भएको बच्चा खेलिरहेको र पानी पिइरहेको छ भने, 38 C (100.4 F) fever भए पनि धेरै सुस्त र सास फेर्न गाह्रो भएको बच्चाभन्दा कम चिन्ताजनक हुन सक्छ।\n\nTemperature मात्र होइन, बच्चाको समग्र अवस्था हेर्नुहोस्।",
   },
   {
     question: "Should I wake my child to give fever medicine?",
+    questionNe: "Fever medicine दिन बच्चालाई निद्राबाट उठाउनु पर्छ?",
     answer:
       "Usually not.\n\nIf your child is sleeping comfortably, it is generally okay to let them rest. Fever medicines are meant to improve comfort, not simply to lower the temperature.",
+    answerNe:
+      "सामान्यतया पर्दैन।\n\nबच्चा आरामसँग सुतिरहेको छ भने सुत्न दिनु ठीक हुन्छ। Fever medicine को उद्देश्य बच्चालाई आराम दिनु हो, temperature मात्र घटाउनु होइन।",
   },
   {
     question: "When should my baby start solid foods?",
+    questionNe: "Baby लाई solid food कहिले सुरु गर्ने?",
     answer:
       "Most babies are ready around 6 months of age.\n\nSigns of readiness include:\nGood head control\nSitting with support\nInterest in food\nAbility to swallow food rather than pushing it out\n\nBreastfeeding should continue alongside complementary feeding.",
+    answerNe:
+      "धेरैजसो baby करिब ६ महिनामा ready हुन्छन्।\n\nReady भएको संकेत:\nटाउको राम्रोसँग धान्नु\nsupport लिएर बस्न सक्नु\nखानामा रुचि देखाउनु\nखाना बाहिर नधकेली निल्न सक्नु\n\nComplementary feeding सँगै breastfeeding जारी राख्नुहोस्।",
   },
   {
     question: "How long should I breastfeed?",
+    questionNe: "Breastfeeding कति समय गर्ने?",
     answer:
       "Exclusive breastfeeding is recommended for the first 6 months.\n\nBreastfeeding should continue along with complementary foods until at least 2 years of age, or longer if mother and child wish.",
+    answerNe:
+      "पहिलो ६ महिना exclusive breastfeeding सिफारिस गरिन्छ।\n\nComplementary food सँगै कम्तीमा २ वर्षसम्म breastfeeding जारी राख्नु राम्रो हुन्छ। आमा र बच्चाले चाहेमा अझै लामो समय गर्न सकिन्छ।",
   },
   {
     question: "My child is not eating well. Should I worry?",
+    questionNe: "मेरो बच्चाले राम्रो खाँदैन। चिन्ता गर्नुपर्छ?",
     answer:
       "Poor appetite is common, especially between 1 and 5 years of age.\n\nIf your child is:\nGrowing well\nActive\nMeeting developmental milestones\n\nthen occasional picky eating is usually normal.\n\nAvoid forcing meals. Offer healthy foods regularly and let your child decide how much to eat.",
+    answerNe:
+      "खानामा रुचि कम हुनु सामान्य हो, विशेष गरी १ देखि ५ वर्षमा।\n\nबच्चा:\nराम्रो बढिरहेको छ\nactive छ\ndevelopment milestones पूरा गरिरहेको छ\n\nभने कहिलेकाहीँ picky eating सामान्य हुन सक्छ।\n\nजबरजस्ती नखुवाउनुहोस्। नियमित healthy food दिनुहोस् र बच्चालाई कति खाने निर्णय गर्न दिनुहोस्।",
   },
   {
     question: "Does teething cause fever?",
+    questionNe: "दाँत आउँदा fever हुन्छ?",
     answer:
       "Teething may cause:\nMild discomfort\nIncreased drooling\nIrritability\n\nHowever, teething does not cause high fever, severe diarrhea, or serious illness.\n\nThese symptoms should be evaluated for another cause.",
+    answerNe:
+      "दाँत आउँदा हुन सक्छ:\nहल्का असहजता\nर्‍याल धेरै आउनु\nचिडचिडापन\n\nतर teething ले high fever, severe diarrhea वा गम्भीर illness गराउँदैन।\n\nयस्ता लक्षण भएमा अरू कारणका लागि जाँच गर्नु आवश्यक हुन्छ।",
   },
   {
     question: "Are vaccines safe?",
+    questionNe: "खोप सुरक्षित छन्?",
     answer:
       "Yes.\n\nVaccines undergo extensive testing before approval and are continuously monitored for safety.\n\nThe benefits of vaccination far outweigh the risks and help protect both your child and the community from serious diseases.",
+    answerNe:
+      "हो, सुरक्षित छन्।\n\nVaccines approval अघि विस्तृत परीक्षणबाट जान्छन् र safety निरन्तर monitor गरिन्छ।\n\nVaccination को फाइदा जोखिमभन्दा धेरै बढी हुन्छ र बच्चा तथा समुदायलाई गम्भीर रोगबाट बचाउँछ।",
   },
   {
     question: "What should I do if my child misses a vaccine?",
+    questionNe: "बच्चाको vaccine छुट्यो भने के गर्ने?",
     answer:
       "Most vaccines do not need to be restarted.\n\nYour pediatrician can create a catch-up schedule so your child receives the remaining doses as soon as possible.",
+    answerNe:
+      "धेरैजसो vaccine फेरि सुरुदेखि लगाउनुपर्दैन।\n\nPediatrician ले catch-up schedule बनाएर बाँकी dose चाँडै लगाउने योजना दिन सक्नुहुन्छ।",
   },
   {
     question: "How often should healthy children have check-ups?",
+    questionNe: "स्वस्थ बच्चाको check-up कति-कति समयमा गर्ने?",
     answer:
       "Regular well-child visits help monitor:\nGrowth\nDevelopment\nNutrition\nVision and hearing\nVaccinations\nGeneral health\n\nEven healthy children benefit from routine preventive visits.",
+    answerNe:
+      "Regular well-child visits ले यी कुरा monitor गर्न मद्दत गर्छ:\nGrowth\nDevelopment\nNutrition\nVision and hearing\nVaccinations\nGeneral health\n\nस्वस्थ बच्चालाई पनि routine preventive visits बाट फाइदा हुन्छ।",
   },
   {
     question: "How much screen time is recommended?",
+    questionNe: "Screen time कति सिफारिस गरिन्छ?",
     answer:
       "Under 18 months: Avoid screen time except for video calls.\n18-24 months: Only high-quality content with a caregiver.\n2-5 years: Around one hour per day of high-quality programming.\nOlder children: Encourage a healthy balance between screens, sleep, physical activity, and family time.",
+    answerNe:
+      "१८ महिनाभन्दा कम: video call बाहेक screen time नदिनु राम्रो।\n१८-२४ महिना: caregiver सँगै high-quality content मात्र।\n२-५ वर्ष: दैनिक करिब १ घण्टा high-quality programming।\nठूला बच्चा: screen, sleep, physical activity र family time बीच healthy balance राख्नुहोस्।",
   },
   {
     question: "When should I worry about my child's growth?",
+    questionNe: "बच्चाको growth बारे कहिले चिन्ता गर्ने?",
     answer:
       "Consult your pediatrician if your child:\nIs not gaining weight appropriately.\nIs losing weight.\nIs much shorter than expected.\nHas stopped growing.\nHas a rapidly increasing or decreasing head size during infancy.\n\nGrowth is best assessed using standardized growth charts over time.",
+    answerNe:
+      "यी अवस्था भए pediatrician सँग परामर्श गर्नुहोस्:\nतौल राम्रोसँग नबढ्नु।\nतौल घट्नु।\nउमेरअनुसार धेरै होचो हुनु।\nबढ्न बन्द हुनु।\nशिशु अवस्थामा टाउकोको आकार धेरै छिटो बढ्नु वा घट्नु।\n\nGrowth लाई standardized growth charts मा समयसँगै हेरेर राम्रो मूल्यांकन गरिन्छ।",
   },
   {
     question: "Can I give over-the-counter cough medicines to young children?",
+    questionNe: "सानो बच्चालाई over-the-counter cough medicine दिन मिल्छ?",
     answer:
       "Generally, no.\n\nCough and cold medicines are not recommended for children younger than 4 years because they offer little benefit and may cause side effects.",
+    answerNe:
+      "सामान्यतया मिल्दैन।\n\n४ वर्षभन्दा कम उमेरका बच्चामा cough र cold medicines सिफारिस गरिँदैन, किनकि फाइदा कम हुन्छ र side effects हुन सक्छ।",
   },
 ];
 

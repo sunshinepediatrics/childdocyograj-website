@@ -1,21 +1,22 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, HeartHandshake, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { useLanguage } from "@/components/LanguageProvider";
 import { Reveal } from "@/components/Motion";
 import { ButtonLink, Card, Section, SectionHeader } from "@/components/Primitives";
 import { blogPosts, brand, faqs, services, testimonials, vaccines } from "@/data/site";
 import { absoluteUrl } from "@/lib/utils";
 
 const doctorPhotoPath = "/images/dr-yograj-sharma.jpg";
-const fallbackHeroImage = "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=1600&q=85";
-const heroImage = existsSync(join(process.cwd(), "public", "images", "dr-yograj-sharma.jpg")) ? doctorPhotoPath : fallbackHeroImage;
+const heroImage = doctorPhotoPath;
 const consultationImage = "/images/consultation-child-family.jpg";
 const logoSrc = "/Blue_White_Simple_Modern_Handwritten_Typographic_Minimalist_Capri_Sport_Club__Logo-removebg-preview (1).png";
 
 export default function Home() {
+  const { isNepali } = useLanguage();
   const physicianJsonLd = {
     "@context": "https://schema.org",
     "@type": "Physician",
@@ -43,22 +44,27 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1fr_0.9fr]">
           <Reveal className="relative z-10">
             <p className="mb-5 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-teal-700 shadow-sm">
-              Real answers for Nepalese families · Science, compassion, and clarity
+              {isNepali ? "नेपाली परिवारका लागि स्पष्ट उत्तर · विज्ञान, करुणा र स्पष्टता" : "Real answers for Nepalese families · Science, compassion, and clarity"}
             </p>
             <h1 className="max-w-4xl text-balance font-heading text-5xl font-semibold leading-tight text-slate-800 sm:text-6xl">
-              Parent with confidence, not confusion
+              {isNepali ? "दुविधा होइन, आत्मविश्वासका साथ parenting" : "Parent with confidence, not confusion"}
             </h1>
             <p className="mt-6 max-w-2xl text-xl leading-9 text-slate-600">
-              Clear pediatric guidance from {brand.doctor} for newborns, infants, children, and adolescents, rooted in evidence-based care and calm parent education.
+              {isNepali
+                ? `${brand.doctor} बाट newborns, infants, children र adolescents का लागि प्रमाणमा आधारित, सरल र शान्त pediatric guidance।`
+                : `Clear pediatric guidance from ${brand.doctor} for newborns, infants, children, and adolescents, rooted in evidence-based care and calm parent education.`}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/contact">Book Consultation</ButtonLink>
+              <ButtonLink href="/contact">{isNepali ? "Consultation बुक गर्नुहोस्" : "Book Consultation"}</ButtonLink>
               <ButtonLink href="/services/newborn-care" variant="secondary">
-                Explore Services
+                {isNepali ? "सेवाहरू हेर्नुहोस्" : "Explore Services"}
               </ButtonLink>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {["Senior Consultant Pediatrician", "Serving under the Government of Nepal", "Neonatology and Child Health", "Evidence-Based Practice"].map((badge) => (
+              {(isNepali
+                ? ["Senior Consultant Pediatrician", "नेपाल सरकार अन्तर्गत सेवा", "Neonatology and Child Health", "Evidence-Based Practice"]
+                : ["Senior Consultant Pediatrician", "Serving under the Government of Nepal", "Neonatology and Child Health", "Evidence-Based Practice"]
+              ).map((badge) => (
                 <span key={badge} className="flex items-center gap-2 rounded-full bg-white/80 px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm">
                   <CheckCircle2 size={18} className="text-teal-600" aria-hidden="true" />
                   {badge}
@@ -81,12 +87,20 @@ export default function Home() {
 
       <Section className="bg-white">
         <div className="grid gap-4 md:grid-cols-4">
-          {[
-            ["Trusted", "Government service and more than 15 years of pediatric practice."],
-            ["Warm", "Clear and Supportive Family-Centered Care."],
-            ["Complete", "Newborn through adolescent health support."],
-            ["Practical", "Advice parents can use at home with confidence."],
-          ].map(([title, text]) => (
+          {(isNepali
+            ? [
+                ["Trusted", "Government service र १५ वर्षभन्दा बढी pediatric practice।"],
+                ["Warm", "स्पष्ट र सहयोगी family-centered care।"],
+                ["Complete", "Newborn देखि adolescent health सम्मको support।"],
+                ["Practical", "घरमा आत्मविश्वासका साथ प्रयोग गर्न मिल्ने सल्लाह।"],
+              ]
+            : [
+                ["Trusted", "Government service and more than 15 years of pediatric practice."],
+                ["Warm", "Clear and Supportive Family-Centered Care."],
+                ["Complete", "Newborn through adolescent health support."],
+                ["Practical", "Advice parents can use at home with confidence."],
+              ]
+          ).map(([title, text]) => (
             <Reveal key={title}>
               <Card className="h-full">
                 <Star className="mb-5 text-peach-500" fill="#fb923c" size={22} aria-hidden="true" />
@@ -99,7 +113,11 @@ export default function Home() {
       </Section>
 
       <Section>
-        <SectionHeader eyebrow="Why parents choose Dr. Sharma" title="Care that feels calm, clear, and deeply child-focused" text="The experience answers the real questions parents carry into every pediatric visit: trust, safety, experience, and genuine care." />
+        <SectionHeader
+          eyebrow={isNepali ? "किन Dr. Sharma?" : "Why parents choose Dr. Sharma"}
+          title={isNepali ? "शान्त, स्पष्ट र child-focused care" : "Care that feels calm, clear, and deeply child-focused"}
+          text={isNepali ? "हरेक pediatric visit मा अभिभावकले खोज्ने trust, safety, experience र genuine care लाई प्राथमिकता।" : "The experience answers the real questions parents carry into every pediatric visit: trust, safety, experience, and genuine care."}
+        />
         <div className="grid gap-5 md:grid-cols-3">
           {[
             [ShieldCheck, "Evidence-based decisions", "Medical advice grounded in pediatric standards and careful clinical judgment."],
@@ -120,7 +138,7 @@ export default function Home() {
       </Section>
 
       <Section className="bg-white">
-        <SectionHeader eyebrow="Featured services" title="Pediatric care for every stage of childhood" />
+        <SectionHeader eyebrow={isNepali ? "मुख्य सेवाहरू" : "Featured services"} title={isNepali ? "बाल्यकालको हरेक चरणका लागि pediatric care" : "Pediatric care for every stage of childhood"} />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
@@ -147,9 +165,14 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal>
-            <SectionHeader align="left" eyebrow="Meet your doctor" title={brand.doctor} text={`${brand.title}, ${brand.affiliation}. Focused on neonatology, child health, prevention, growth, development, and parent education.`} />
+            <SectionHeader
+              align="left"
+              eyebrow={isNepali ? "डाक्टरको परिचय" : "Meet your doctor"}
+              title={brand.doctor}
+              text={isNepali ? `${brand.title}, ${brand.affiliation}. Neonatology, child health, prevention, growth, development र parent education मा केन्द्रित।` : `${brand.title}, ${brand.affiliation}. Focused on neonatology, child health, prevention, growth, development, and parent education.`}
+            />
             <ButtonLink href="/about" variant="secondary">
-              Learn about Dr. Sharma
+              {isNepali ? "Dr. Sharma बारे जान्नुहोस्" : "Learn about Dr. Sharma"}
             </ButtonLink>
           </Reveal>
         </div>
@@ -217,7 +240,7 @@ export default function Home() {
       </Section>
 
       <Section className="bg-white">
-        <SectionHeader eyebrow="Ask Your Child Doc" title="Common questions from parents" />
+        <SectionHeader eyebrow={isNepali ? "Ask Your Child Doc" : "Ask Your Child Doc"} title={isNepali ? "अभिभावकका सामान्य प्रश्नहरू" : "Common questions from parents"} />
         <div className="mx-auto max-w-4xl">
           <FAQAccordion faqs={faqs} />
         </div>
